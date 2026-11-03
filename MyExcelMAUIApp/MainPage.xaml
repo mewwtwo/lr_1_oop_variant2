@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyExcelMAUIApp"
+             x:Class="MyExcelMAUIApp.MainPage"
+             Title="Електронна таблиця">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollView Orientation="Horizontal" Grid.ColumnSpan="2">
+            <StackLayout Orientation="Horizontal" Spacing="4" Padding="4">
+                <Button Text="Зберегти" Clicked="SaveButton_Clicked" />
+                <Button Text="Прочитати" Clicked="ReadButton_Clicked" />
+                <Button Text="Вийти" Clicked="ExitButton_Clicked" />
+                <Button Text="Порахувати" Clicked="CalculateButton_Clicked" />
+                <Button x:Name="ModeButton" Text="Режим: ВИРАЗ" Clicked="ModeButton_Clicked" />
+                <Button Text="Довідка" Clicked="HelpButton_Clicked" />
+                <Button Text="Видалити рядок" Clicked="DeleteRowButton_Clicked" />
+                <Button Text="Видалити стовпчик" Clicked="DeleteColumnButton_Clicked" />
+                <Button Text="Додати рядок" Clicked="AddRowButton_Clicked" />
+                <Button Text="Додати стовпчик" Clicked="AddColumnButton_Clicked" />
+            </StackLayout>
+        </ScrollView>
+
+        <Label x:Name="cellNameLabel" Text="—" Grid.Row="1" VerticalOptions="Center" Margin="8,0" FontAttributes="Bold" />
+        <Entry x:Name="textInput" Placeholder="Введіть вираз для виділеної клітинки і натисніть Enter"
+               Grid.Row="1" Grid.Column="1" Completed="TextInput_Completed" />
+
+        <ScrollView Grid.Row="2" Grid.ColumnSpan="2" Orientation="Both">
+            <Grid x:Name="grid" ColumnSpacing="1" RowSpacing="1">
+            </Grid>
+        </ScrollView>
+
+        <Label x:Name="statusLabel" Grid.Row="3" Grid.ColumnSpan="2" Margin="8,4" Text="Готово" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MyExcelMAUIApp.Tests/MyExcelMAUIApp.Tests.csproj" />
+  <Project Path="MyExcelMAUIApp/MyExcelMAUIApp.csproj" />
+</Solution>

@@ -1,0 +1,6 @@
+<Project>
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+		<ArtifactsPath>$(HOME)/.maui-build/MyExcelMAUIApp</ArtifactsPath>
+		<ValidateXcodeVersion>false</ValidateXcodeVersion>
+	</PropertyGroup>
+</Project>
